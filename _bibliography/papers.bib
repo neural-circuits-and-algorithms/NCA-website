@@ -1,0 +1,95 @@
+---
+---
+
+%% Most out of the box .bib citations should work
+%% Be sure to have comma after every line as in "title={TITLE},"
+%% To add url button set url={https://YOUR-URL.COM/}
+%% To add pdf button set pdf={https://YOUR-URL.COM/}
+%% To add code button set code={https://YOUR-URL.COM/}
+%% To add an image set img={IMG_NAME.png} and place the image in /assets/img/pubs/IMG_NAME.png
+%% To add a this paper to a "Related Publications" sections of a Project set related={RELATED-TAG}. RELATED-TAG should correspond to the "related-tag: *****" part of the project.md file.
+%% consider adding abstract = "Blah blah..." which generates the ABS button on layout
+%% To appear on the front page of the website in the "Selected Publications" section set: selected={true},
+
+@misc{friedrich2021neural,
+      title={Neural optimal feedback control with local learning rules}, 
+      author={Johannes Friedrich and Siavash Golkar and Shiva Farashahi and Alexander Genkin and Anirvan M. Sengupta and Dmitri B. Chklovskii},
+      year={2021},
+      eprint={2111.06920},
+      archivePrefix={arXiv},
+      primaryClass={q-bio.NC},
+      selected={true},
+      related={Theory},
+}
+
+@article{giovannucci2019caiman,
+  title={CaImAn: An open source tool for scalable Calcium Imaging data Analysis},
+  author={Giovannucci, Andrea and Friedrich, Johannes and Gunn, Pat and Kalfon, Jeremie and Brown, Brandon L and Koay, Sue Ann and Taxidis, Jiannis and Najafi, Farzaneh and Gauthier, Jeffrey L and Zhou, Pengcheng and Khakh, Baljit S and Tank, David W and Chklovskii, Dmitri B and Pnevmatikakis, Eftychios A},
+  journal={eLife},
+  volume={8},
+  pages={e38173},
+  year={2019},
+  publisher={eLife Sciences Publications Limited},
+  related = {Calcium},
+  img={caiman.jpg},
+  url = {https://elifesciences.org/articles/38173},
+  code = {https://github.com/flatironinstitute/CaImAn},
+  abstract = "Advances in fluorescence microscopy enable monitoring larger brain areas in-vivo with finer time resolution. The resulting data rates require reproducible analysis pipelines that are reliable, fully automated, and scalable to datasets generated over the course of months. We present CaImAn, an open-source library for calcium imaging data analysis. CaImAn provides automatic and scalable methods to address problems common to pre-processing, including motion correction, neural activity identification, and registration across different sessions of data collection. It does this while requiring minimal user intervention, with good scalability on computers ranging from laptops to high-performance computing clusters. CaImAn is suitable for two-photon and one-photon imaging, and also enables real-time analysis on streaming data. To benchmark the performance of CaImAn we collected and combined a corpus of manual annotations from multiple labelers on nine mouse two-photon datasets. We demonstrate that CaImAn achieves near-human performance in detecting locations of active neurons."
+}
+
+@article{DBLP:journals/corr/abs-2112-02039,
+  abbr      = {MIDL},
+  author    = {Jules Berman and
+               Dmitri B. Chklovskii and
+               Jingpeng Wu},
+  title     = {Bridging the Gap: Point Clouds for Merging Neurons in Connectomics},
+  journal   = {CoRR},
+  volume    = {abs/2112.02039},
+  year      = {2021},
+  related   = {Connectomics},
+  eprinttype = {arXiv},
+  eprint    = {2112.02039},
+  timestamp = {Tue, 07 Dec 2021 12:15:54 +0100},
+  biburl    = {https://dblp.org/rec/journals/corr/abs-2112-02039.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org},
+  img       = {berman2021.png},
+  url       = {https://arxiv.org/abs/2112.02039},
+  pdf       = {https://arxiv.org/pdf/2112.02039.pdf},
+  code      = {https://github.com/julesberman/neuron_merger},
+  abstract  = "In the field of Connectomics, a primary problem is that of 3D neuron segmentation. Although deep learning-based methods have achieved remarkable accuracy, errors still exist, especially in regions with image defects. One common type of defect is that of consecutive missing image sections. Here, data is lost along some axis, and the resulting neuron segmentations are split across the gap. To address this problem, we propose a novel method based on point cloud representations of neurons. We formulate the problem as a classification problem and train CurveNet, a state-of-the-art point cloud classification model, to identify which neurons should be merged. We show that our method not only performs strongly but also scales reasonably to gaps well beyond what other methods have attempted to address. Additionally, our point cloud representations are highly efficient in terms of data, maintaining high performance with an amount of data that would be unfeasible for other methods. We believe that this is an indicator of the viability of using point cloud representations for other proofreading tasks."
+}
+
+@article{10.1162/neco_a_01414,
+    abbr   = {Neural Comp},
+    author = {Lipshutz, David and Bahroun, Yanis and Golkar, Siavash and Sengupta, Anirvan M. and Chklovskii, Dmitri B.},
+    title = "{A Biologically Plausible Neural Network for Multichannel Canonical Correlation Analysis}",
+    journal = {Neural Computation},
+    volume = {33},
+    number = {9},
+    pages = {2309-2352},
+    year = {2021},
+    month = {08},
+    abstract = "{Cortical pyramidal neurons receive inputs from multiple distinct neural populations and integrate these inputs in separate dendritic compartments. We explore the possibility that cortical microcircuits implement canonical correlation analysis (CCA), an unsupervised learning method that projects the inputs onto a common subspace so as to maximize the correlations between the projections. To this end, we seek a multichannel CCA algorithm that can be implemented in a biologically plausible neural network. For biological plausibility, we require that the network operates in the online setting and its synaptic update rules are local. Starting from a novel CCA objective function, we derive an online optimization algorithm whose optimization steps can be implemented in a single-layer neural network with multicompartmental neurons and local non-Hebbian learning rules. We also derive an extension of our online CCA algorithm with adaptive output rank and output whitening. Interestingly, the extension maps onto a neural network whose neural architecture and synaptic updates resemble neural circuitry and non-Hebbian plasticity observed in the cortex.}",
+    issn = {0899-7667},
+    doi = {10.1162/neco_a_01414},
+    url = {https://direct.mit.edu/neco/article/33/9/2309/102622/A-Biologically-Plausible-Neural-Network-for},
+    pdf = {https://direct.mit.edu/neco/article-pdf/33/9/2309/1978152/neco\_a\_01414.pdf},
+    img = {lipshutz2021.png},
+}
+
+@article{8887559,
+  abbr={IEEE},
+  author={Pehlevan, Cengiz and Chklovskii, Dmitri B.},
+  journal={IEEE Signal Processing Magazine}, 
+  title={Neuroscience-Inspired Online Unsupervised Learning Algorithms: Artificial Neural Networks}, 
+  year={2019},
+  volume={36},
+  number={6},
+  pages={88-96},
+  doi={10.1109/MSP.2019.2933846},
+  url={https://ieeexplore.ieee.org/document/8887559},
+  pdf={https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8887559},
+  abstract= "Inventors of the original artificial neural networks (ANNs) derived their inspiration from biology [1]. However, today, most ANNs, such as backpropagation-based convolutional deeplearning networks, resemble natural NNs only superficially. Given that, on some tasks, such ANNs achieve human or even superhuman performance, why should one care about such dissimilarity with natural NNs? The algorithms of natural NNs are relevant if one's goal is not just to outperform humans on certain tasks but to develop general-purpose artificial intelligence rivaling that of a human. As contemporary ANNs are far from achieving this goal and natural NNs, by definition, achieve it, natural NNs must contain some 'secret sauce' that ANNs lack. This is why we need to understand the algorithms implemented by natural NNs.",
+  }
+
+

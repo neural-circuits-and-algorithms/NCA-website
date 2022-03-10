@@ -1,0 +1,56 @@
+---
+layout: default
+---
+
+<!-- people.html -->
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <p class="post-description">{{ page.description }}</p>
+  </header>
+      <!-- Display categorized people -->
+    {%- for category in page.display_categories %}
+    <h2 class="category">{{ category }}</h2>
+    {%- assign people = site.people | where: "category", category -%}
+    {%- assign people = people| sort: "last_name" -%}
+      <div class="people">
+        {% for item in people  %}
+          <div class="person" id="{%- if item.last_name == 'Chklovskii' -%}leader{%- endif -%}">
+            {%- if category == "Current" %}
+            <div class="photo">
+              {%- if item.image %}
+              <img class="photo-image" src="{{ item.image | prepend: '/assets/img/people/' }}"/>         
+              {% endif -%}
+            </div>
+            {% endif -%}
+            <div class="name-position">
+              <div class="name">
+                {{ item.first_name }} {{ item.last_name }}{%- if item.degree %}, {{ item.degree }}{% endif -%}
+              </div>
+
+              <div class="position">
+                {{ item.position }}
+              </div>
+
+              {%- if category == "Past" %}
+                <div class="position">
+                  Current Position: {{ item.current }}
+                </div>
+              {% endif -%}
+
+              <div class="social">
+                <div class="contact-icons">
+                {% include social.html person=item %} 
+                </div>
+              </div>
+              
+            </div>
+            <div class="bio">
+              {{ item.content }}
+            </div>
+          </div>
+        {%- endfor %} 
+      </div>
+    {%- endfor %} 
+</div>
+
