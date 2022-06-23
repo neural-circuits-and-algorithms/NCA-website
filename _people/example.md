@@ -4,7 +4,7 @@
 name: Jules Berman           <- Your Name
 position: Research Analyst   <- Your position in group
 degree: M.S.                 <- M.S. Ph.D. etc... match other people in capitalization and punctuation
-image: assets/img/jules.png  <- Name of photo should be in /assets/img/. use path as: '/assets/img/YOUR_IMG.png'
+image: jules.png  <- Name of photo. Photo should be in /assets/img/. use as: 'YOUR_IMG.png'
 category: Current            <- IMPORTANT MUST BE EXACTLY "Current" OR "Past", DO NOT LEAVE BLANK
 
 ## These are the links that will genereate small icons under your name
@@ -12,6 +12,7 @@ category: Current            <- IMPORTANT MUST BE EXACTLY "Current" OR "Past", D
 email: jberman@flatironinstitute.org
 github_username: julesberman
 website: http://julesberman.github.io
+scholar_userid: 8--imZAAAAAJ&hl=en&oi=ao
 ---
 # Put your bio below, this is what appears to the right of your name and photo.
 
