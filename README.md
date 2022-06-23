@@ -50,18 +50,18 @@ Then navigate in your browser to http://127.0.0.1:4000
 
 <br/>
 
-# Beginner's Guide to Open a PR on this Repo
+# Beginner's Guide to Make Change and Open a PR on this Repo
 
-## CREATE A BRANCH #
+## CREATE/GOTO YOUR BRANCH #
 
-1. git checkout -b test  # creates a new branch, and checks it out
-1. git checkout test # or move to already exisiting
+1. `git checkout -b BRANCH_NAME` # to create branch and move to OR  `git checkout BRANCH_NAME` to move to already exisiting
+2. `git pull` # to get latest version of repo
 
 ## MAKE YOUR CHANGES LOCALLY #
 
-1. git add .
-2. git commit -am 'MESSAGE DESCRIBING YOUR CHANGE'
-3. git push # or use "git push --set-upstream origin BRANCH_NAME" if prompted
+1. `git add .`
+2. `git commit -am 'MESSAGE DESCRIBING YOUR CHANGE'`
+3. `git push` # or use "`git push --set-upstream origin BRANCH_NAME`" if prompted
 
 ## OPEN A PULL REQUEST #
 

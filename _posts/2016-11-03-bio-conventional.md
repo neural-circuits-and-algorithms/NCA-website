@@ -1,7 +1,7 @@
 ---
 layout: distill
-title: The search for biologically plausible neural computation – the conventional approach
-description: an example of a distill-style blog post and main elements
+title: The Search for Biologically Plausible Neural Computation
+description: the conventional approach
 date: 2016-11-03
 categories: biologically-plausible neural-computation
 
