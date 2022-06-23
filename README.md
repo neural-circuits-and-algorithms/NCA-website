@@ -50,6 +50,31 @@ Then navigate in your browser to http://127.0.0.1:4000
 
 <br/>
 
+# Beginner's Guide to Open a PR on this Repo
+
+## CREATE A BRANCH #
+
+1. git checkout -b test  # creates a new branch, and checks it out
+1. git checkout test # or move to already exisiting
+
+## MAKE YOUR CHANGES LOCALLY #
+
+1. git add .
+2. git commit -am 'MESSAGE DESCRIBING YOUR CHANGE'
+3. git push # or use "git push --set-upstream origin BRANCH_NAME" if prompted
+
+## OPEN A PULL REQUEST #
+
+1. Go to repo on github: https://github.com/neural-circuits-and-algorithms/NCA-website
+2. Go to "Pull requests" tab
+3. Click "New pull request"
+4. Top left: set "base: main <- compare: *YOUR_BRANCH*"
+5. You should see a diff representing all your changes
+6. Click "Create pull request"
+7. Click "Create pull request" again
+8. Notify website admin to approve you Pull Request
+9. Done!!
+
 ## **For all other questions, it is problably best to first consult the original documentation of the Jekyll Templete al-folio:**
 
 # al-folio
