@@ -57,7 +57,7 @@ Then navigate in your browser to http://127.0.0.1:4000
 1. `git checkout -b BRANCH_NAME` # to create branch and move to OR  `git checkout BRANCH_NAME` to move to already exisiting
 2. `git pull` # to get latest version of repo
 
-## MAKE YOUR CHANGES LOCALLY #
+## AFTER YOU MAKE YOUR CHANGES LOCALLY #
 
 1. `git add .`
 2. `git commit -am 'MESSAGE DESCRIBING YOUR CHANGE'`
