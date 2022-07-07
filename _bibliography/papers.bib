@@ -11,15 +11,69 @@
 %% consider adding abstract = "Blah blah..." which generates the ABS button on layout
 %% To appear on the front page of the website in the "Selected Publications" section set: selected={true},
 
-@misc{friedrich2021neural,
-      title={Neural optimal feedback control with local learning rules}, 
-      author={Johannes Friedrich and Siavash Golkar and Shiva Farashahi and Alexander Genkin and Anirvan M. Sengupta and Dmitri B. Chklovskii},
-      year={2021},
-      eprint={2111.06920},
-      archivePrefix={arXiv},
-      primaryClass={q-bio.NC},
-      selected={true},
-      related={Theory},
+@inproceedings{friedrich2021neural,
+  title={Neural optimal feedback control with local learning rules},
+  author={Johannes Friedrich and Siavash Golkar and Shiva Farashahi and Alexander Genkin and Anirvan M. Sengupta and Dmitri B. Chklovskii},
+  booktitle={Advances in Neural Information Processing Systems},
+  volume={34},
+  pages={16358--16370},
+  year={2021},
+  abstract="A major problem in motor control is understanding how the brain plans and executes proper movements in the face of delayed and noisy stimuli. A prominent framework for addressing such control problems is Optimal Feedback Control (OFC). OFC generates control actions that optimize behaviorally relevant criteria by integrating noisy sensory stimuli and the predictions of an internal model using the Kalman filter or its extensions. However, a satisfactory neural model of Kalman filtering and control is lacking because existing proposals have the following limitations: not considering the delay of sensory feedback, training in alternating phases, requiring knowledge of the noise covariance matrices, as well as that of systems dynamics. Moreover, the majority of these studies considered Kalman filtering in isolation, and not jointly with control. To address these shortcomings, we introduce a novel online algorithm which combines adaptive Kalman filtering with a model free control approach (i.e., policy gradient algorithm). We implement this algorithm in a biologically plausible neural network with local synaptic plasticity rules. This network, with local synaptic plasticity rules, performs system identification, Kalman filtering and control with delayed noisy sensory feedback. This network performs system identification and Kalman filtering, without the need for multiple phases with distinct update rules or the knowledge of the noise covariances. It can perform state estimation with delayed sensory feedback, with the help of an internal model. It learns the control policy without requiring any knowledge of the dynamics, thus avoiding the need for weight transport. In this way, our implementation of OFC solves the credit assignment problem needed to produce the appropriate sensory-motor control in the presence of stimulus delay.",
+  selected={true},
+  related={Theory},
+  url={https://proceedings.neurips.cc/paper/2021/hash/88591b4d3219675bdeb33584b755f680-Abstract.html},
+  pdf={https://proceedings.neurips.cc/paper/2021/file/88591b4d3219675bdeb33584b755f680-Paper.pdf},
+  code={https://github.com/j-friedrich/neuralOFC},
+  img={BioOFC.png},
+  video={https://slideslive.com/38969014/neural-optimal-feedback-control-with-local-learning-rules},
+}
+
+@inproceedings{friedrich2020neuronal,
+  title={Neuronal Gaussian Process Regression},
+  author={Johannes Friedrich},
+  booktitle={Advances in Neural Information Processing Systems},
+  volume={33},
+  pages={7090--7100},
+  year={2020},
+  abstract="The brain takes uncertainty intrinsic to our world into account. For example, associating spatial locations with rewards requires to predict not only expected reward at new spatial locations but also its uncertainty to avoid catastrophic events and forage safely. A powerful and flexible framework for nonlinear regression that takes uncertainty into account in a principled Bayesian manner is Gaussian process (GP) regression. Here I propose that the brain implements GP regression and present neural networks (NNs) for it. First layer neurons, e.g.\ hippocampal place cells, have tuning curves that correspond to evaluations of the GP kernel. Output neurons explicitly and distinctively encode predictive mean and variance, as observed in orbitofrontal cortex (OFC) for the case of reward prediction. Because the weights of a NN implementing exact GP regression do not arise with biological plasticity rules, I present approximations to obtain local (anti-)Hebbian synaptic learning rules. The resulting neuronal network approximates the full GP well compared to popular sparse GP approximations and achieves comparable predictive performance.",
+  related={Theory},
+  url={https://proceedings.neurips.cc/paper/2020/hash/4ef2f8259495563cb3a8ea4449ec4f9f-Abstract.html},
+  pdf={https://proceedings.neurips.cc/paper/2020/file/4ef2f8259495563cb3a8ea4449ec4f9f-Paper.pdf},
+  code={https://github.com/j-friedrich/neuronalGPR},
+  img={NeuronalGPR.png},
+  video={https://slideslive.com/38937416/neuronal-gaussian-process-regression},
+}
+
+@article{cai2021volpy,
+  title={VolPy: Automated and scalable analysis pipelines for voltage imaging datasets},
+  author={Cai, Changjia and Friedrich, Johannes and Singh, Amrita and Eybposh, M Hossein and Pnevmatikakis, Eftychios A and Podgorski, Kaspar and Giovannucci, Andrea},
+  journal={PLoS Computational Biology},
+  volume={17},
+  number={4},
+  pages={e1008806},
+  year={2021},
+  publisher={Public Library of Science San Francisco, CA USA},
+  abstract="Voltage imaging enables monitoring neural activity at sub-millisecond and sub-cellular scale, unlocking the study of subthreshold activity, synchrony, and network dynamics with unprecedented spatio-temporal resolution. However, high data rates (>800MB/s) and low signal-to-noise ratios create bottlenecks for analyzing such datasets. Here we present VolPy, an automated and scalable pipeline to pre-process voltage imaging datasets. VolPy features motion correction, memory mapping, automated segmentation, denoising and spike extraction, all built on a highly parallelizable, modular, and extensible framework optimized for memory and speed. To aid automated segmentation, we introduce a corpus of 24 manually annotated datasets from different preparations, brain areas and voltage indicators. We benchmark VolPy against ground truth segmentation, simulations and electrophysiology recordings, and we compare its performance with existing algorithms in detecting spikes. Our results indicate that VolPy’s performance in spike extraction and scalability are state-of-the-art.",
+  related = {Calcium},
+  img={volpy.png},
+  url={https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008806},
+  pdf={https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1008806&type=printable}
+}
+
+@article{friedrich2021online,
+  title={Online analysis of microendoscopic 1-photon calcium imaging data streams},
+  author={Friedrich, Johannes and Giovannucci, Andrea and Pnevmatikakis, Eftychios A},
+  journal={PLoS Computational Biology},
+  volume={17},
+  number={1},
+  pages={e1008565},
+  year={2021},
+  publisher={Public Library of Science San Francisco, CA USA},
+  abstract="In vivo calcium imaging through microendoscopic lenses enables imaging of neuronal populations deep within the brains of freely moving animals. Previously, a constrained matrix factorization approach (CNMF-E) has been suggested to extract single-neuronal activity from microendoscopic data. However, this approach relies on offline batch processing of the entire video data and is demanding both in terms of computing and memory requirements. These drawbacks prevent its applicability to the analysis of large datasets and closed-loop experimental settings. Here we address both issues by introducing two different online algorithms for extracting neuronal activity from streaming microendoscopic data. Our first algorithm, \on, presents an online adaptation of the CNMF-E algorithm, which dramatically reduces its memory and computation requirements. Our second algorithm proposes a convolution-based background model for microendoscopic data that enables even faster (real time) processing. Our approach is modular and can be combined with existing online motion artifact correction and activity deconvolution methods to provide a highly scalable pipeline for microendoscopic data analysis. We apply our algorithms on four previously published typical experimental datasets and show that they yield similar high-quality results as the popular offline approach, but outperform it with regard to computing time and memory requirements. They can be used instead of CNMF-E to process pre-recorded data with boosted speeds and dramatically reduced memory requirements. Further, they newly enable online analysis of live-streaming data even on a laptop.",
+  related = {Calcium},
+  img={friedrich2021online.png},
+  url={https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1008565},
+  pdf={https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1008565&type=printable}
 }
 
 @article{giovannucci2019caiman,
@@ -30,6 +84,7 @@
   pages={e38173},
   year={2019},
   publisher={eLife Sciences Publications Limited},
+  selected={true},
   related = {Calcium},
   img={caiman.jpg},
   url = {https://elifesciences.org/articles/38173},
@@ -91,4 +146,44 @@
   abstract= "Inventors of the original artificial neural networks (ANNs) derived their inspiration from biology [1]. However, today, most ANNs, such as backpropagation-based convolutional deeplearning networks, resemble natural NNs only superficially. Given that, on some tasks, such ANNs achieve human or even superhuman performance, why should one care about such dissimilarity with natural NNs? The algorithms of natural NNs are relevant if one's goal is not just to outperform humans on certain tasks but to develop general-purpose artificial intelligence rivaling that of a human. As contemporary ANNs are far from achieving this goal and natural NNs, by definition, achieve it, natural NNs must contain some 'secret sauce' that ANNs lack. This is why we need to understand the algorithms implemented by natural NNs.",
   }
 
+@inproceedings{giovannucci2017OnACID,
+  author = {Giovannucci, Andrea and Friedrich, Johannes and Kaufman, Matt and Churchland, Anne and Chklovskii, Dmitri and Paninski, Liam and Pnevmatikakis, Eftychios A},
+  booktitle = {Advances in Neural Information Processing Systems},
+  editor = {I. Guyon and U. Von Luxburg and S. Bengio and H. Wallach and R. Fergus and S. Vishwanathan and R. Garnett},
+  pages = {},
+  publisher = {Curran Associates, Inc.},
+  title = {OnACID: Online Analysis of Calcium Imaging Data in Real Time},
+  volume = {30},
+  year = {2017},
+  abstract="Optical imaging methods using calcium indicators are critical for monitoring the activity of large neuronal populations in vivo. Imaging experiments typically generate a large amount of data that needs to be processed to extract the activity of the imaged neuronal sources. While deriving such processing algorithms is an active area of research, most existing methods require the processing of large amounts of data at a time, rendering them vulnerable to the volume of the recorded data, and preventing real-time experimental interrogation. Here we introduce OnACID, an Online framework for the Analysis of streaming Calcium Imaging Data, including i) motion artifact correction, ii) neuronal source extraction, and iii) activity denoising and deconvolution. Our approach combines and extends previous work on online dictionary learning and calcium imaging data analysis, to deliver an automated pipeline that can discover and track the activity of hundreds of cells in real time, thereby enabling new types of closed-loop experiments. We apply our algorithm on two large scale experimental datasets, benchmark its performance on manually annotated data, and show that it outperforms a popular offline approach.",
+  selected={true},
+  related={Calcium},
+  url = {https://papers.nips.cc/paper/2017/hash/4edaa105d5f53590338791951e38c3ad-Abstract.html},
+  pdf = {https://proceedings.neurips.cc/paper/2017/file/4edaa105d5f53590338791951e38c3ad-Paper.pdf},
+  img={OnACID.png},
+}
 
+@article{pnevmatikakis2017normcorre,
+  title={NoRMCorre: An online algorithm for piecewise rigid motion correction of calcium imaging data},
+  author={Pnevmatikakis, Eftychios A and Giovannucci, Andrea},
+  journal={Journal of Neuroscience Methods},
+  volume={291},
+  pages={83--94},
+  year={2017},
+  publisher={Elsevier},
+  abstract="Background: 
+Motion correction is a challenging pre-processing problem that arises early in the analysis pipeline of calcium imaging data sequences. The motion artifacts in two-photon microscopy recordings can be non-rigid, arising from the finite time of raster scanning and non-uniform deformations of the brain medium.
+New method: 
+We introduce an algorithm for fast Non-Rigid Motion Correction (NoRMCorre) based on template matching. NoRMCorre operates by splitting the field of view (FOV) into overlapping spatial patches along all directions. The patches are registered at a sub-pixel resolution for rigid translation against a regularly updated template. The estimated alignments are subsequently up-sampled to create a smooth motion field for each frame that can efficiently approximate non-rigid artifacts in a piecewise-rigid manner.
+Existing methods: 
+Existing approaches either do not scale well in terms of computational performance or are targeted to non-rigid artifacts arising just from the finite speed of raster scanning, and thus cannot correct for non-rigid motion observable in datasets from a large FOV.
+Results: 
+NoRMCorre can be run in an online mode resulting in comparable to or even faster than real time motion registration of streaming data. We evaluate its performance with simple yet intuitive metrics and compare against other non-rigid registration methods on simulated data and in vivo two-photon calcium imaging datasets. Open source Matlab and Python code is also made available.
+Conclusions: 
+The proposed method and accompanying code can be useful for solving large scale image registration problems in calcium imaging, especially in the presence of non-rigid deformations.",
+  related = {Calcium},
+  img={NoRMCorre.jpg},
+  code={https://github.com/flatironinstitute/NoRMCorre},
+  url={https://www.sciencedirect.com/science/article/pii/S0165027017302753},
+  pdf={https://reader.elsevier.com/reader/sd/pii/S0165027017302753?token=608390C16B5A2B7F7164DCCB91D865D32809CC12C6837E582BD51BBB3203B21B967B24C5E913A62B21F81FB6712D5AFE&originRegion=us-east-1&originCreation=20220707192104}
+}
