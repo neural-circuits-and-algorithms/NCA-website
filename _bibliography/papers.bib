@@ -8,6 +8,7 @@
 %% To add code button set code={https://YOUR-URL.COM/}
 %% To add an image set img={IMG_NAME.png} and place the image in /assets/img/pubs/IMG_NAME.png
 %% To add a this paper to a "Related Publications" sections of a Project set related={RELATED-TAG}. RELATED-TAG should correspond to the "related-tag: *****" part of the project.md file.
+%% RELATED CATEGORIES: "Theory" OR "Calcium" OR "Connectomics"
 %% consider adding abstract = "Blah blah..." which generates the ABS button on layout
 %% To appear on the front page of the website in the "Selected Publications" section set: selected={true},
 
@@ -76,6 +77,34 @@
   pdf={https://journals.plos.org/ploscompbiol/article/file?id=10.1371/journal.pcbi.1008565&type=printable}
 }
 
+
+@article{golkar2020simple,
+  title={A simple normative network approximates local non-Hebbian learning in the cortex},
+  author={Golkar, Siavash and Lipshutz, David and Bahroun, Yanis and Sengupta, Anirvan and Chklovskii, Dmitri},
+  journal={Advances in Neural Information Processing Systems},
+  volume={33},
+  img={rrr.png},
+  pages={7283--7295},
+  url={https://proceedings.neurips.cc/paper/2020/hash/5133aa1d673894d5a05b9d83809b9dbe-Abstract.html},
+  abstract={To guide behavior, the brain extracts relevant features from high-dimensional data streamed by sensory organs. Neuroscience experiments demonstrate that the processing of sensory inputs by cortical neurons is modulated by instructive signals which provide context and task-relevant information. Here, adopting a normative approach, we model these instructive signals as supervisory inputs guiding the projection of the feedforward data. Mathematically, we start with a family of Reduced-Rank Regression (RRR) objective functions which include Reduced Rank (minimum) Mean Square Error (RRMSE) and Canonical Correlation Analysis (CCA), and derive novel offline and online optimization algorithms, which we call Bio-RRR. The online algorithms can be implemented by neural networks whose synaptic learning rules resemble calcium plateau potential dependent plasticity observed in the cortex. We detail how, in our model, the calcium plateau potential can be interpreted as a backpropagating error signal. We demonstrate that, despite relying exclusively on biologically plausible local learning rules, our algorithms perform competitively with existing implementations of RRMSE and CCA.},
+  year={2020},
+  related={Theory},
+}
+
+@article{lipshutz2020biologically,
+  title={A biologically plausible neural network for slow feature analysis},
+  author={Lipshutz, David and Windolf, Charles and Golkar, Siavash and Chklovskii, Dmitri B.},
+  journal={Advances in Neural Information Processing Systems},
+  volume={33},
+  img={sfa.png},
+  abstract={Learning latent features from time series data is an important problem in both machine learning and brain function. One approach, called Slow Feature Analysis (SFA), leverages the slowness of many salient features relative to the rapidly varying input signals. Furthermore, when trained on naturalistic stimuli, SFA reproduces interesting properties of cells in the primary visual cortex and hippocampus, suggesting that the brain uses temporal slowness as a computational principle for learning latent features. However, despite the potential relevance of SFA for modeling brain function, there is currently no SFA algorithm with a biologically plausible neural network implementation, by which we mean an algorithm operates in the online setting and can be mapped onto a neural network with local synaptic updates. In this work, starting from an SFA objective, we derive an SFA algorithm, called Bio-SFA, with a biologically plausible neural network implementation. We validate Bio-SFA on naturalistic stimuli.
+},
+  url={https://proceedings.neurips.cc/paper/2020/hash/ab73f542b6d60c4de151800b8abc0a6c-Abstract.html},
+  pages={14986--14996},
+  year={2020},
+  related={Theory},
+}
+
 @article{giovannucci2019caiman,
   title={CaImAn: An open source tool for scalable Calcium Imaging data Analysis},
   author={Giovannucci, Andrea and Friedrich, Johannes and Gunn, Pat and Kalfon, Jeremie and Brown, Brandon L and Koay, Sue Ann and Taxidis, Jiannis and Najafi, Farzaneh and Gauthier, Jeffrey L and Zhou, Pengcheng and Khakh, Baljit S and Tank, David W and Chklovskii, Dmitri B and Pnevmatikakis, Eftychios A},
@@ -122,6 +151,7 @@
     number = {9},
     pages = {2309-2352},
     year = {2021},
+    related={Theory},
     month = {08},
     abstract = "{Cortical pyramidal neurons receive inputs from multiple distinct neural populations and integrate these inputs in separate dendritic compartments. We explore the possibility that cortical microcircuits implement canonical correlation analysis (CCA), an unsupervised learning method that projects the inputs onto a common subspace so as to maximize the correlations between the projections. To this end, we seek a multichannel CCA algorithm that can be implemented in a biologically plausible neural network. For biological plausibility, we require that the network operates in the online setting and its synaptic update rules are local. Starting from a novel CCA objective function, we derive an online optimization algorithm whose optimization steps can be implemented in a single-layer neural network with multicompartmental neurons and local non-Hebbian learning rules. We also derive an extension of our online CCA algorithm with adaptive output rank and output whitening. Interestingly, the extension maps onto a neural network whose neural architecture and synaptic updates resemble neural circuitry and non-Hebbian plasticity observed in the cortex.}",
     issn = {0899-7667},
@@ -143,8 +173,75 @@
   doi={10.1109/MSP.2019.2933846},
   url={https://ieeexplore.ieee.org/document/8887559},
   pdf={https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8887559},
+  img = {neuro-insp-online.png},
   abstract= "Inventors of the original artificial neural networks (ANNs) derived their inspiration from biology [1]. However, today, most ANNs, such as backpropagation-based convolutional deeplearning networks, resemble natural NNs only superficially. Given that, on some tasks, such ANNs achieve human or even superhuman performance, why should one care about such dissimilarity with natural NNs? The algorithms of natural NNs are relevant if one's goal is not just to outperform humans on certain tasks but to develop general-purpose artificial intelligence rivaling that of a human. As contemporary ANNs are far from achieving this goal and natural NNs, by definition, achieve it, natural NNs must contain some 'secret sauce' that ANNs lack. This is why we need to understand the algorithms implemented by natural NNs.",
   }
+
+@article{Tesileanu2021,
+img = {tibi_seq_seg.png},
+bibtex_show = {true},
+selected = {true},
+abstract = {The brain must extract behaviorally relevant latent variables from the signals streamed by the sensory organs. Such latent variables are often encoded in the dynamics that generated the signal rather than in the specific realization of the waveform. Therefore, one problem faced by the brain is to segment time series based on underlying dynamics. We present two algorithms for performing this segmentation task that are biologically plausible, which we define as acting in a streaming setting and all learning rules being local. One algorithm is model based and can be derived from an optimization problem involving a mixture of autoregressive processes. This algorithm relies on feedback in the form of a prediction error and can also be used for forecasting future samples. In some brain regions, such as the retina, the feedback connections necessary to use the prediction error for learning are absent. For this case, we propose a second, model-free algorithm that uses a running estimate of the autocorrelation structure of the signal to perform the segmentation. We show that both algorithms do well when tasked with segmenting signals drawn from autoregressive models with piecewise-constant parameters. In particular, the segmentation accuracy is similar to that obtained from oracle-like methods in which the ground-truth parameters of the autoregressive models are known. We also test our methods on data sets generated by alternating snippets of voice recordings. We provide implementations of our algorithms at <a href="https://github.com/ttesileanu/bio-time-series">https://github.com/ttesileanu/bio-time-series</a>.},
+archivePrefix = {arXiv},
+arxivId = {2104.11852},
+author = {Tesileanu, Tiberiu and Golkar, Siavash and Nasiri, Samaneh and Sengupta, Anirvan M. and Chklovskii, Dmitri B.},
+doi = {10.1162/neco_a_01476},
+journal = {Neural Computation},
+eprint = {2104.11852},
+pages = {1--34},
+title = {{Neural circuits for dynamics-based segmentation of time series}},
+keywords = {biowta},
+related = {Theory},
+url = {http://arxiv.org/abs/2104.11852},
+pdf = {https://arxiv.org/pdf/2104.11852.pdf},
+year = {2021},
+}
+
+
+@article{Pehlevan_2018,
+	doi = {10.1162/neco_a_01018},
+	url = {https://doi.org/10.1162%2Fneco_a_01018},
+	year = 2018,
+	month = {jan},
+	publisher = {{MIT} Press - Journals},
+	volume = {30},
+	number = {1},
+	pages = {84--124},
+	author = {Cengiz Pehlevan and Anirvan M. Sengupta and Dmitri B. Chklovskii},
+	title = {Why Do Similarity Matching Objectives Lead to Hebbian/Anti-Hebbian Networks?},
+	journal = {Neural Computation},
+  pdf = {https://arxiv.org/pdf/1703.07914.pdf},
+  related = {Theory},
+  img = {hebanti.png},
+}
+
+@article {Sengupta338947,
+	author = {Sengupta, Anirvan M. and Tepper, Mariano and Pehlevan, Cengiz and Genkin, Alexander and Chklovskii, Dmitri B.},
+	title = {Manifold-tiling Localized Receptive Fields are Optimal in Similarity-preserving Neural Networks},
+	elocation-id = {338947},
+	year = {2018},
+	doi = {10.1101/338947},
+	publisher = {Cold Spring Harbor Laboratory},
+	abstract = {Many neurons in the brain, such as place cells in the rodent hippocampus, have localized receptive fields, i.e., they respond to a small neighborhood of stimulus space. What is the functional significance of such representations and how can they arise? Here, we propose that localized receptive fields emerge in similarity-preserving networks of rectifying neurons that learn low-dimensional manifolds populated by sensory inputs. Numerical simulations of such networks on standard datasets yield manifold-tiling localized receptive fields. More generally, we show analytically that, for data lying on symmetric manifolds, optimal solutions of objectives, from which similarity-preserving networks are derived, have localized receptive fields. Therefore, nonnegative similarity-preserving mapping (NSM) implemented by neural networks can model representations of continuous manifolds in the brain.},
+	url = {https://www.biorxiv.org/content/early/2018/10/29/338947},
+	pdf = {https://www.biorxiv.org/content/early/2018/10/29/338947.full.pdf},
+	journal = {bioRxiv},
+  img = {mani.png},
+}
+
+@article {Pehlevan226746,
+	author = {Pehlevan, Cengiz and Genkin, Alexander and Chklovskii, Dmitri B.},
+	title = {A clustering neural network model of insect olfaction},
+	elocation-id = {226746},
+	year = {2018},
+	doi = {10.1101/226746},
+	publisher = {Cold Spring Harbor Laboratory},
+	abstract = {A key step in insect olfaction is the transformation of a dense representation of odors in a small population of neurons - projection neurons (PNs) of the antennal lobe - into a sparse representation in a much larger population of neurons -Kenyon cells (KCs) of the mushroom body. What computational purpose does this transformation serve? We propose that the PN-KC network implements an online clustering algorithm which we derive from the k-means cost function. The vector of PN-KC synaptic weights converging onto a given KC represents the corresponding cluster centroid. KC activities represent attribution indices, i.e. the degree to which a given odor presentation is attributed to each cluster. Remarkably, such clustering view of the PN-KC circuit naturally accounts for several of its salient features. First, attribution indices are nonnegative thus rationalizing rectification in KCs. Second, the constraint on the total sum of attribution indices for each presentation is enforced by a Lagrange multiplier identified with the activity of a single inhibitory interneuron reciprocally connected with KCs. Third, the soft-clustering version of our algorithm reproduces observed sparsity and overcompleteness of the KC representation which may optimize supervised classification downstream.},
+	url = {https://www.biorxiv.org/content/early/2018/01/27/226746},
+	pdf = {https://www.biorxiv.org/content/early/2018/01/27/226746.full.pdf},
+	journal = {bioRxiv},
+  img = {insect_clustering.png},
+}
 
 @inproceedings{giovannucci2017OnACID,
   author = {Giovannucci, Andrea and Friedrich, Johannes and Kaufman, Matt and Churchland, Anne and Chklovskii, Dmitri and Paninski, Liam and Pnevmatikakis, Eftychios A},

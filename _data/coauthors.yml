@@ -1,12 +1,19 @@
 "Chklovskii":
   - firstname: ["Dmitri B.", "Dmitri B", "Mitya", "Dmitri", "B."]
     url: https://www.simonsfoundation.org/people/dmitri-mitya-chklovskii/
-
 "Pehlevan":
   - firstname: ["Cengiz"]
     url: https://pehlevan.seas.harvard.edu
-
 "Berman":
   - firstname: ["Jules"]
     url: https://julesberman.github.io
+"Lipshutz":
+  - firstname: ["David"]
+    url: https://davidlipshutz.com
+"Golkar":
+  - firstname: ["Siavash"]
+    url: https://www.simonsfoundation.org/people/siavash-golkar/
+"Tesileanu":
+  - firstname: ["Tiberiu"]
+    url: http://ttesileanu.com
 
