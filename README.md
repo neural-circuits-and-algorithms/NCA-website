@@ -42,6 +42,7 @@ Then navigate in your browser to http://127.0.0.1:4000
 Currently no automated deployment is set up. You must manually deploy by running commands on your local machine.
 To do this, from the root folder run:
 1. `git checkout main`
+2. `git pull`
 2. `./bin/deploy`
 
 
