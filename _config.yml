@@ -2,8 +2,8 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: Chklovskii Lab
-header_title: Neural Circuits and Algorithms
+title: Neural Circuits and Algorithms
+header_title: CHKLOVSKII LAB 
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   Neural Circuits and Algorithms Group in the Center for Computational Neuroscience at the Flatiron Institute
 # footer_text: >

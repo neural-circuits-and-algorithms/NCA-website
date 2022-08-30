@@ -1,7 +1,7 @@
 ---
 layout: project-page
 title: Connectomics
-description: A high resolution map of the brain.
+description: A high resolution map of the brain
 img: assets/img/conn.png
 related-tag: Connectomics
 ---

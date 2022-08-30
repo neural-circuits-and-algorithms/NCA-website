@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: Flatiron Institute, Center for Computational Neuroscience
+subtitle: <a href="https://www.simonsfoundation.org/flatiron/" target="_blank">Flatiron Institute</a>, <a href="https://www.simonsfoundation.org/flatiron/center-for-computational-neuroscience/" target="_blank">Center for Computational Neuroscience</a>
 groupimage: group.png
 news: true  # includes a list of news items
 projects: true # includes a list of projects

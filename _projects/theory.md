@@ -1,7 +1,7 @@
 ---
 layout: project-page
 title: Theory
-description: Theoretical work on neural computation.
+description: Biological machine learning
 img: assets/img/theory.png
 related-tag: Theory
 ---

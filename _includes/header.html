@@ -4,12 +4,12 @@
       <!-- Nav Bar -->
       <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}">
         <div class="container">
-        <a class="navbar-link" href="https://www.simonsfoundation.org/flatiron/">
+        <!-- <a class="navbar-link" href="https://www.simonsfoundation.org/flatiron/">
           <img class="navbar-logo" src="/assets/img/fi-logo.png"/>
         </a>
         <a class="navbar-link" href="https://www.simonsfoundation.org/flatiron/center-for-computational-neuroscience/">
           <img class="navbar-logo" src="/assets/img/brain-logo.png"/>
-        </a>
+        </a> -->
         <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl | prepend: site.url }}/">
             {{ site.header_title }}
         </a>
@@ -68,7 +68,7 @@
               </li>
               {%- else %}
               <li class="nav-item {% if page.title == p.title %}active{% endif %}">
-                <a class="nav-link" href="{{ p.url | relative_url }}">{{ p.title }}
+                <a class="nav-link" href="{{ p.url | relative_url }}" {% if p.newtab %}target="_blank"{% endif %}>{{ p.title }}
                   {%- if page.title == p.title -%}
                   <span class="sr-only">(current)</span>
                   {%- endif -%}
