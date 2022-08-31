@@ -1,6 +1,6 @@
 ---
 layout: distill
-title: The Search for Biologically Plausible Neural Computation
+title: The Search for Biologically Plausible Neural Computation — Part 1
 description: the conventional approach
 date: 2016-11-03
 categories: biologically-plausible neural-computation
