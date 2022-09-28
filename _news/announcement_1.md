@@ -1,6 +1,6 @@
 ---
 layout: post
-date: 2021-11-02
+date: 2022-09-28
 inline: true
 ---
-Two papers accepted in NeurIPS 2021. Congrats to Johannes Friedrich and Yanis Bahroun!
+Two papers accepted in NeurIPS 2022. Congrats to Alex Genkin, Siavash Golkar, Tiberiu Tesileanu, David Lipshutz, Anirvan Sengupta, and Yanis Bahroun!
