@@ -1,13 +1,13 @@
 ---
 first_name: Jules
 last_name: Berman
-position: Research Analyst
+current: Ph.D. student at NYU
 degree: M.S.
 image: jules.png
-category: Current
+category: Past
 email: jberman@flatironinstitute.org
 github_username: julesberman
 website: http://julesberman.github.io
 ---
 <!-- bio below -->
-Jules Berman is a masters student at NYU in the scientific computing program. He is interested in machine learning with scientific applications. His current research at the Center of Computational Neuroscience attempts to extract connectomic data from Electron Microscopy images using machine learning techniques, looking at different ways to apply geometric deep learning methods to this problem. He will be beginning his PhD in Computer Science at NYU.
+Jules Berman is a Ph.D. student at NYU in Computer Science. He is interested in machine learning with scientific applications. His research at the Center of Computational Neuroscience was on extraction of connectomics data from Electron Microscopy images using machine learning techniques, looking at different ways to apply geometric deep learning methods to this problem.

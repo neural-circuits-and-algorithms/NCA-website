@@ -1,10 +1,10 @@
 ---
 first_name: Johannes 
 last_name: Friedrich
-position: Associate Research Scientist
+current: Research Scientist at The Allen Institute
 degree: Ph.D.
 image: johannes.webp
-category: Current
+category: Past
 email: jfriedrich@flatironinstitute.org
 github_username: j-friedrich
 website: http://www.stat.columbia.edu/~johannes
