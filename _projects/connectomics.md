@@ -15,9 +15,9 @@ Currently, the only imaging technology that can bridge this range of scales is s
 Our Connectomics project focuses on Megaphragma viggiani, a highly miniaturised wasp with complex behavior yet a small number of neurons.
 
 Videos
-- [Overview of the Megaphragma Dataset](https://www.youtube.com/watch?v=-uv6Pqg3d8U)
-- [Flying Megaphragma from four angles, timelapse](https://youtube.com/shorts/w7FMpum5AVI)
-- [Flying Megaphragma, timelapse](https://www.youtube.com/watch?v=-UkBzGjQMKI)
+- [Overview of the Megaphragma Dataset](https://www.youtube.com/watch?v=-uv6Pqg3d8U), from Alexy Polilov and the lab of Harald Hess
+- [Flying Megaphragma from four angles, timelapse](https://youtube.com/shorts/w7FMpum5AVI), from the lab of Alexy Polilov
+- [Flying Megaphragma, timelapse](https://www.youtube.com/watch?v=-UkBzGjQMKI), from the lab of Alexy Polilov
 - [Reconstructed Optic Lobe Neurons in the Megaphragma](https://www.youtube.com/watch?v=jQIn9KSR3pU)
 - [1865 of the neurons in the Megaphragma Brain](https://www.youtube.com/watch?v=bAxzyNuCgME)
-- [Megaphragma head FIB-SEM volume](https://www.youtube.com/watch?v=I5r-HWcOyPo)
+- [Megaphragma head FIB-SEM volume](https://www.youtube.com/watch?v=I5r-HWcOyPo), from the lab of Harald Hess
