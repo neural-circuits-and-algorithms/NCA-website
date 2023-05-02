@@ -222,6 +222,9 @@ scholar:
 
   query: "@*"
 
+  sort_by: year, month
+  order: descending
+
 
 # -----------------------------------------------------------------------------
 # Responsive WebP Images
