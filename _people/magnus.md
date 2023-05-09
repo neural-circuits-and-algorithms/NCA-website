@@ -3,7 +3,7 @@ first_name: Magnus
 last_name: Tournoy
 position: Research Fellow
 degree: Ph.D.
-image: 
+image: magnus.jpg
 category: Current
 email: mtournoy@flatironinstitute.org
 ---
