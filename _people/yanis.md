@@ -4,7 +4,7 @@ last_name: Bahroun
 position: Flatiron Research Fellow
 degree: Ph.D.
 image: yanis.webp
-category: Current
+category: Past
 email: ybahroun@flatironinstitute.org
 ---
 <!-- bio below -->

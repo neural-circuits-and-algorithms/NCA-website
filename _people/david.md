@@ -4,7 +4,7 @@ last_name: Lipshutz
 position: Associate Research Scientist
 degree: Ph.D.
 image: david.webp
-category: Current
+category: Past
 email: dlipshutz@flatironinstitute.org
 website: http://davidlipshutz.com
 scholar_userid: XeWdtXcAAAAJ

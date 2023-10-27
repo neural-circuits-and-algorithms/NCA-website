@@ -4,7 +4,7 @@ last_name: Golkar
 position: Associate Research Scientist
 degree: Ph.D.
 image: siavash.webp
-category: Current
+category: Past
 email: sgolkar@flatironinstitute.org
 ---
 <!-- bio below -->
