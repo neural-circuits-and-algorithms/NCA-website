@@ -1,7 +1,7 @@
 ---
 layout: post
-date: 2023-04-01 08:01:00-0400
+date: 2023-10-01 08:01:00-0400
 inline: true
 ---
 
-Magnus Tournoy, Ph.D., joins the group
+Joshua Pughe-Sanford, Ph.D., joins the group
