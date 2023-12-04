@@ -10,4 +10,6 @@ social: false  # includes social icons at the bottom of the page
 ---
 Our goal is to understand how the brain analyzes large and complex datasets streamed by sensory organs in order to aid efforts at building artificial neural systems and treating mental illness.
 
-We analyze experimental data, assembling connectomes from high-throughput electron microscopy and determining neuronal dynamics from calcium imaging and multi-electrode recordings. In addition, we are developing a novel algorithmic theory of neural computation. 
+We analyze experimental data, assembling connectomes from high-throughput electron microscopy and determining neuronal dynamics from calcium imaging and multi-electrode recordings. In addition, we are developing a novel algorithmic theory of neural computation.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/R-lKVO0JbnQ?si=2g6vsFIPVBFb1t3R" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> 
