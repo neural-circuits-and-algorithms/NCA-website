@@ -3,11 +3,9 @@ first_name: Jingpeng
 last_name: Wu
 position: Associate Research Scientist
 degree: Ph.D.
-image: jingpeng.webp
-category: Current
+category: Past
 email: jwu@flatironinstitute.org
 github_username: jingpengw
-website: https://users.flatironinstitute.org/~jwu
 scholar_userid: ZB6o8OMAAAAJ
 ---
 <!-- bio below -->
