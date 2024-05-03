@@ -1,10 +1,9 @@
 ---
 first_name: Jingpeng 
 last_name: Wu
-position: Associate Research Scientist
+position: PhD Advisor at Shanghai Tech University
 degree: Ph.D.
 category: Past
-email: jwu@flatironinstitute.org
 github_username: jingpengw
 scholar_userid: ZB6o8OMAAAAJ
 ---

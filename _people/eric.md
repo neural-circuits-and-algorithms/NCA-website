@@ -1,7 +1,6 @@
 ---
 first_name: Eric
 last_name: Thomson
-position: Visiting Scholar
 degree: Ph. D.
 image: thomson.png
 category: Past
