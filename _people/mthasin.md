@@ -2,7 +2,7 @@
 first_name: Myisha
 last_name: Thasin
 current: Data Modeler at Tempus AI
-degree: M.S. in Bioinformatics at Brandeis University
+degree: M.S.
 category: Past
 website: 
 scholar_userid: 

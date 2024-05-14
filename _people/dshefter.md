@@ -1,7 +1,7 @@
 ---
 first_name: Deena
 last_name: Shefter
-degree: Bachelors in Neuroscience and Behavior at Columbia University
+degree: 
 current: Data Research Analyst at Memorial Sloan Kettering Cancer Center
 category: Past
 website: 
