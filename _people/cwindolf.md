@@ -1,7 +1,7 @@
 ---
 first_name: Charlie
 last_name: Windolf
-position: Doctoral Candidate at Columbia University
+current: Doctoral Candidate at Columbia University
 category: Past
 github_username: cwindolf
 scholar_userid: U9B1P9oAAAAJ

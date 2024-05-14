@@ -1,7 +1,7 @@
 ---
 first_name: David 
 last_name: Lipshutz
-position: Associate Research Scientist
+current: Associate Research Scientist
 degree: Ph.D.
 image: david.webp
 category: Past

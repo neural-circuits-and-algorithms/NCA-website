@@ -1,7 +1,7 @@
 ---
 first_name: Nicholas
 last_name: Chua
-position: Doctoral Candidate at Columbia University
+current: Doctoral Candidate at Columbia University
 degree: 
 category: Past
 email: j.n.chua@columbia.edu

@@ -1,7 +1,7 @@
 ---
 first_name: Jingpeng 
 last_name: Wu
-position: PhD Advisor at Shanghai Tech University
+current: PhD Advisor at Shanghai Tech University
 degree: Ph.D.
 category: Past
 github_username: jingpengw

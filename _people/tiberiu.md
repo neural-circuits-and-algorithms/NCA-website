@@ -2,6 +2,7 @@
 first_name: Tiberiu 
 last_name: Tesileanu
 position: Associate Research Scientist
+current: Software Engineer at Meta
 degree: Ph.D.
 image: tiberiu.webp
 scholar_userid: 8--imZAAAAAJ&hl=en&oi=ao

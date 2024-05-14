@@ -1,7 +1,7 @@
 ---
 first_name: Siavash 
 last_name: Golkar
-position: Associate Research Scientist
+current: Associate Research Scientist
 degree: Ph.D.
 image: siavash.webp
 category: Past
