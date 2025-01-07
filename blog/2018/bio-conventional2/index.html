@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<!-- _layouts/distill.html -->
+<html>
+  <head>        
+    <!-- Metadata, OpenGraph and Schema.org -->
+    
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Neural Circuits and Algorithms | The Search for Biologically Plausible Neural Computation — Part 2</title>
+    <meta name="author" content="  " />
+    <meta name="description" content="a similarity-based approach" />
+    <meta name="keywords" content="dmitri chklovskii, mitya chklovskii, connectomics, neural circuits, neural algorithms, computational neuroscience, flatiron institute" />
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" integrity="sha512-RO38pBRxYH3SoOprtPTD86JFOclM51/XTIdEPh5j8sj4tp8jmQIx26twG52UaLi//hQldfrh7e51WzP9wuP32Q==" crossorigin="anonymous" />
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"  integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://gitcdn.link/repo/jwarby/jekyll-pygments-themes/master/github.css" />
+
+    <!-- Styles -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="https://neural-circuits-and-algorithms.github.io/blog/2018/bio-conventional2/">
+
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams'
+      }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    <!-- Distill js -->
+    <script src="/assets/js/distillpub/template.v2.js"></script>
+    <script src="/assets/js/distillpub/transforms.v2.js"></script>
+    
+  </head>
+
+  <d-front-matter>
+    <script async type="text/json">{
+      "title": "The Search for Biologically Plausible Neural Computation — Part 2",
+      "description": "a similarity-based approach",
+      "published": "December 3, 2018",
+      "authors": [
+        {
+          "author": "Dmitri 'Mitya' Chklovskii",
+          "authorURL": "https://scholar.google.com/citations?user=7Bgb5TUAAAAJ&hl=en",
+          "affiliations": [
+            {
+              "name": "Flatiron Institue",
+              "url": ""
+            }
+          ]
+        },
+        {
+          "author": "Cengiz Pehlevan",
+          "authorURL": "https://scholar.google.com/citations?user=veDLTPEAAAAJ",
+          "affiliations": [
+            {
+              "name": "Harvard University",
+              "url": ""
+            }
+          ]
+        }
+        
+      ],
+      "katex": {
+        "delimiters": [
+          {
+            "left": "$",
+            "right": "$",
+            "display": false
+          },
+          {
+            "left": "$$",
+            "right": "$$",
+            "display": true
+          }
+        ]
+      }
+    }</script>
+  </d-front-matter>
+
+  <body class="fixed-top-nav">
+
+    <!-- Header -->
+    <header>
+
+      <!-- Nav Bar -->
+      <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+        <div class="container">
+        <!-- <a class="navbar-link" href="https://www.simonsfoundation.org/flatiron/">
+          <img class="navbar-logo" src="/assets/img/fi-logo.png"/>
+        </a>
+        <a class="navbar-link" href="https://www.simonsfoundation.org/flatiron/center-for-computational-neuroscience/">
+          <img class="navbar-logo" src="/assets/img/brain-logo.png"/>
+        </a> -->
+        <a class="navbar-brand title font-weight-lighter" href="https://neural-circuits-and-algorithms.github.io/">
+            CHKLOVSKII LAB
+        </a>
+
+
+          <!-- Navbar Toggle -->
+          <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar top-bar"></span>
+            <span class="icon-bar middle-bar"></span>
+            <span class="icon-bar bottom-bar"></span>
+          </button>
+
+          <div class="collapse navbar-collapse text-right" id="navbarNav">
+            <ul class="navbar-nav ml-auto flex-nowrap">
+
+              <!-- About
+              <li class="nav-item ">
+                <a class="nav-link" href="/">About</a>
+              </li> -->
+              
+              <!-- Blog -->
+              <li class="nav-item active">
+                <a class="nav-link" href="/blog/">Blog</a>
+              </li>
+
+              <!-- Other pages -->
+              <li class="nav-item ">
+                <a class="nav-link" href="/careers/" target="_blank">Careers</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="/people/">People</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="/publications/">Publications</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Content -->
+    <div class="post distill">
+
+      <d-title>
+        <h1>The Search for Biologically Plausible Neural Computation — Part 2</h1>
+        <p>a similarity-based approach</p>
+      </d-title>
+
+      <d-byline></d-byline>
+
+      <d-article>
+        <d-contents>
+          <nav class="l-text figcaption">
+          <h3>Contents</h3>
+            <div><a href="#similarity-matching-objective-function">Similarity-matching objective function</a></div>
+            <div><a href="#variable-substitution-trick">Variable substitution trick</a></div>
+            <div><a href="#online-algorithm-and-neural-network">Online algorithm and neural network</a></div>
+            <div><a href="#other-similarity-based-objectives-and-linear-networks">Other similarity-based objectives and linear networks</a></div>
+            <div><a href="#nonnegative-similarity-matching-objective-and-a-nonlinear-network">Nonnegative similarity-matching objective and a nonlinear network</a></div>
+            <div><a href="#similarity-based-algorithms-as-general-purpose-tools">Similarity-based algorithms as general-purpose tools</a></div>
+            
+          </nav>
+        </d-contents>
+
+        <p>This is the second post in a series reviewing recent progress in designing artificial neural networks (NNs) that resemble natural NNs not just superficially, but on a deeper, algorithmic level. In addition to serving as models of natural NNs, such networks can serve as general-purpose machine learning algorithms. Respecting biological constraints, viewed naively as a handicap in developing competitive general-purpose machine learning algorithms, can instead facilitate the development of artificial NNs by restricting the search space of possible algorithms.</p>
+
+<p>In the previous post, we focused on the constraints that must be met for an unsupervised algorithm to be biologically plausible. For an algorithm to be implementable as a NN, it must be formulated in the online setting. In the corresponding NN, synaptic weight updates must be local, i.e. depend on the activity of only two neurons that the synapse connects. Then, we demonstrated that deriving NNs for dimensionality reduction in a conventional way - by minimizing the reconstruction error - results in multi-neuron networks with biologically implausible non-local learning rules.</p>
+
+<p>In this post, we propose a different objective function which we term similarity matching. From this objective function, we derive an online algorithm implementable by a NN with local learning rules. Then, we introduce other similarity-based algorithms which include more biological features such as different neuron classes and nonlinear activation functions. Finally, we review similarity-matching algorithms with state-of-the-art performance.</p>
+
+<h2 id="similarity-matching-objective-function">Similarity-matching objective function</h2>
+
+<p>We start by stating an objective function that will be used to derive NNs for linear dimensionality reduction. Let ${\bf x_t} \in R^n, t=1,…T$, be a set of data points (inputs) and ${\bf y_t} \in R^k, t=1,…T, (k&lt;n)$ be their learned representation (outputs). The similarity of a pair of inputs, ${\bf x_t}$ and ${\bf x_t '}$, can be defined as their dot-product, ${\bf x_t}$⊤${\bf x_t'}$. Analogously, the similarity of a pair of outputs is {\bf y_t}⊤{\bf y_t}′. Similarity matching, as its name suggests, learns a representation where the similarity between each pair of outputs matches that of the corresponding inputs:</p>
+
+\[\min_{ {\bf y}_1,\ldots,{\bf y}_T}  \frac{1}{T^2}  \sum_{t=1}^T  \sum_{t'=1}^T \left({\bf x}_t^\top {\bf x}_{t'} - {\bf y}_t^\top {\bf y}_{t'} \right)^2. \qquad\qquad (2.1)\]
+
+<p>This offline objective function, previously employed for multidimensional scaling, is optimized by the projections of inputs onto the principal subspace of their covariance, i.e. performing PCA up to an orthogonal rotation. Moreover, (2.1) has no local minima other than the principal subspace solution.</p>
+
+<p>The similarity-matching objective (2.1) may seem like a strange choice for deriving an online algorithm implementable by a NN. In the online setting, inputs are streamed to the algorithm sequentially and each output must be computed before the ne${\bf x_t}$ input arrives. Yet, in (2.1), pairs of inputs and outputs from different time points interact with each other. In addition, whereas ${\bf x_t}$ and ${\bf y_t}$ could be interpreted as inputs and outputs to a network, unlike in the reconstruction approach (1.4), synaptic weights do not appear explicitly in (2.1).</p>
+
+<h2 id="variable-substitution-trick">Variable substitution trick</h2>
+<p>Both of the above concerns can be resolved by a simple math trick akin to completing the square. We first focus on the cross-term in (2.1), which we call similarity alignment. By re-ordering the variables and introducing a new variable, ${\bf W} \in R^{k \times n}$, we obtain:</p>
+
+\[- \frac{1}{T^2}\sum_{t=1}^T \sum_{t'=1}^T  {\bf y}_{t}^\top {\bf y}_{t'} {\bf x}_t^\top {\bf x}_{t'}= - \frac{1}{T^2}\sum_{t=1}^T  {\bf y}_{t}^\top  \left[ \sum_{t'=1}^T {\bf y}_{t'} {\bf x}_{t'}^\top \right ] {\bf x}_t\]
+
+\[\qquad \qquad \qquad \qquad\qquad  =   \min_{ {\bf W} \in \mathbb{R}^{k\times n}}  -\frac{2}{T} \sum_{t=1}^T{\bf y}_t^\top {\bf W} {\bf x}_t + {\rm Tr } {\bf W}^\top {\bf W}.\; (2.2)\]
+
+<p>To prove the second identity, find optimal ${\bf W}$ by taking a derivative of the expression on the right with respect to ${\bf W}$ and setting it to zero, and then substitute the optimal ${\bf W}$ back into the expression. Similarly, for the quartic ${\bf y_t}$ term in (2.1):</p>
+
+\[\frac{1}{T^2}\sum_{t=1}^T \sum_{t'=1}^T  {\bf y}_{t}^\top {\bf y}_{t'} {\bf y}_t^\top {\bf y}_{t'}= \frac{1}{T^2}\sum_{t=1}^T  {\bf y}_{t}^\top  \left[ \sum_{t'=1}^T {\bf y}_{t'} {\bf y}_{t'}^\top \right ] {\bf y}_t\]
+
+\[\qquad \qquad \qquad \qquad\qquad  =   \max_{ {\bf M} \in \mathbb{R}^{k\times k}}  \frac{2}{T} \sum_{t=1}^T{\bf y}_t^\top {\bf M} {\bf y}_t - {\rm Tr }  {\bf M}^\top {\bf M}.\quad(2.3)\]
+
+<p>By substituting (2.2) and (2.3) into (2.1) we get:</p>
+
+\[\min_{ {\bf W}\in \mathbb{R}^{k\times n}}\max_{ {\bf M}\in \mathbb{R}^{k\times k}}  \frac{1}{T} \sum_{t=1}^T \left[2 {\rm Tr}\left({\bf W}^\top{\bf W}\right) - {\rm Tr}\left({\bf M}^\top{\bf M}\right) +  \min_{ {\bf y}_t\in \mathbb{R}^{k\times 1}}  l_t({\bf W},{\bf M},{\bf y}_t)\right],\; (2.4)\]
+
+<p>where</p>
+
+\[l_t({\bf W},{\bf M},{\bf y}_t)=-4{\bf x}_t^\top{\bf W}{\bf y}_t + 2{\bf y}_t^\top{\bf M}{\bf y}_t.\qquad\qquad (2.5)\]
+
+<p>In the resulting objective function, (2.4),(2.5), optimal outputs at different time steps can be computed independently, making the problem amenable to an online algorithm. The price paid for this simplification is the appearance of the minimax optimization problem in variables, ${\bf W}$ and ${\bf M}$. Minimization over  ${\bf W}$ aligns output channels with the greatest variance directions of the input and maximization over ${\bf M}$ diversifies the output channels. The competition between the two in a gradient descent/ascent algorithm results in the principal subspace projection which is the only stable fixed point of the corresponding dynamics.</p>
+
+<h2 id="online-algorithm-and-neural-network">Online algorithm and neural network</h2>
+<p>Now, we are ready to derive an algorithm for optimizing (2.1) online. First, by minimizing (2.5) with respect to ${\bf y_t}$ while keeping ${\bf W}$ and $ {\bf M} $ fixed we get the dynamics for the output variables:</p>
+
+\[\dot{\bf y}_t={\bf W} {\bf x}_t-{\bf M} {\bf y}_t.\qquad\qquad (2.6)\]
+
+<p>To find ${\bf y_t}$ after the presentation of the corresponding input, ${\bf x_t}$, (2.6) is iterated until convergence.</p>
+
+<p>After the convergence of ${\bf y_t}$ we update ${\bf W}$ and $ {\bf M} $ by gradient descent of (2.2) and gradient ascent of (2.3) respectively:</p>
+
+\[W_{ij} \leftarrow W_{ij} + \eta \left(y_i{\bf x_j}-{\bf W}_{ij}\right), \qquad   M_{ij} \leftarrow M_{ij} + \eta \left(y_iy_j-M_{ij}\right). \qquad (2.7)\]
+
+<p>Algorithm (2.6),(2.7), first derived <a href="https://www.researchgate.net/publication/273003026_A_HebbianAnti-Hebbian_Neural_Network_for_Linear_Subspace_Learning_A_Derivation_from_Multidimensional_Scaling_of_Streaming_Data" target="_blank" rel="noopener noreferrer">here</a>, can be naturally implemented by a biologically plausible NN, Figure 1. Here, activity (firing rate) of the upstream neurons corresponds to input variables. Output variables are computed by the dynamics of activity (2.6) in a single layer of neurons. Variables ${\bf W}$ and $ {\bf M} $ are represented by the weights of synapses in feedforward and lateral connections respectively. The learning rules (2.7) are local, i.e. the weight update, ΔWij, for the synapse between jth input neuron and ith output neuron depends only on the activities, ${\bf x_j}$, of jth input neuron and, ${\bf y_i}$, of ith output neuron, and the synaptic weight. In neuroscience, learning rules (2.7) for ${\bf W}$ and ${\bf M}$ are called Hebbian and anti-Hebbian respectively.</p>
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    <source media="(max-width: 480px)" srcset="/assets/img/blog/bio2_Figure1-480.webp"></source>
+    <source media="(max-width: 800px)" srcset="/assets/img/blog/bio2_Figure1-800.webp"></source>
+    <source media="(max-width: 1400px)" srcset="/assets/img/blog/bio2_Figure1-1400.webp"></source>
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/bio2_Figure1.png">
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+    Figure 1: A Hebbian/Anti-Hebbian network derived from similarity matching.
+</div>
+
+<p>To summarize, starting with the similarity-matching objective, we derived a Hebbian/anti-Hebbian NN for dimensionality reduction. The minimax objective can be viewed as a zero-sum game played by the weights of feedforward and lateral connections. This demonstrates that synapses with local updates can still collectively work together to optimize a global objective. A similar, although not identical, NN was proposed by Foldiak heuristically. The advantage of our normative approach is that the offline solution is known. Although no proof of convergence exists in the online setting, algorithm (2.6),(2.7) performs well in practice.</p>
+
+<h2 id="other-similarity-based-objectives-and-linear-networks">Other similarity-based objectives and linear networks</h2>
+<p>We used the same framework to derive NNs for other computational tasks and incorporating more biological features. As the algorithm (2.6),(2.7) and the NN in Figure 1 were derived from the similarity-matching objective (2.1), they project data onto the principal subspace but do not necessarily recover principal components per se. To derive PCA algorithms we modified the objective function (2.1), <a href="https://arxiv.org/abs/1511.09468" target="_blank" rel="noopener noreferrer">here</a> and (here)[https://arxiv.org/abs/1810.06966], to encourage orthogonality of ${\bf W}$. Such algorithms are implemented by NNs of the same architecture as in Figure 1 but with slightly different learning rules.</p>
+
+<p>Although the similarity-matching NN in Figure 1 relies on biologically plausible local learning rules, it lacks biological realism in several other ways. For example, computing output requires recurrent activity that must settle faster than the time scale of the input variation, which is unlikely in biology. To respect this biological constraint, <a href="https://arxiv.org/abs/1810.06966" target="_blank" rel="noopener noreferrer">we modified</a> the dimensionality reduction algorithm to avoid recurrency.</p>
+
+<p>Another non-biological feature of the NN in Figure 1 is that the output neurons compete with each other by communicating via lateral connections. In biology, such interactions are not direct but mediated by interneurons. To reflect these observations, we modified the objective function by introducing a whitening constraint:</p>
+
+\[\min_{ {\bf y}_1,\ldots,{\bf y}_T}  - \frac{1}{T^2}\sum_{t=1}^T \sum_{t'=1}^T  {\bf y}_{t}^\top {\bf y}_{t'} {\bf x}_t^\top {\bf x}_{t'}, \qquad {\rm s.t.} \quad \frac 1T \sum_{t=1}^T {\bf y}_t {\bf y}_t^\top = {\bf I}_k, \qquad (2.8)\]
+
+<p>where Ik is the k-by-k identity matrix. Then, by representing the whitening constraint using Lagrange relaxation, we derived NNs where interneurons appear naturally - their activity is modeled by the Lagrange multipliers, z⊤tzt′ (Figure 2):</p>
+
+\[\min_{ {\bf y}_1,\ldots,{\bf y}_T} \max_{ {\bf z}_1,\ldots,{\bf z}_T } - \frac{1}{T^2}\sum_{t=1}^T \sum_{t'=1}^T  {\bf y}_{t}^\top {\bf y}_{t'} {\bf x}_t^\top {\bf x}_{t'} + \frac{1}{T^2}\sum_{t=1}^T \sum_{t'=1}^T  {\bf z}_{t}^\top {\bf z}_{t'} \left({\bf y}_{t}^\top {\bf y}_{t'} -\delta_{t,t'}\right). \; (2.9)\]
+
+<p>Notice how (2.9) contains the y-z similarity-alignment term similar to (2.2). We can now derive learning rules for the y-z connections using the variable substitution trick, leading to the network in Figure 2. For details of this and other NN derivations, see <a href="http://papers.nips.cc/paper/5885-a-normative-theory-of-adaptive-dimensionality-reduction-in-neural-networks" target="_blank" rel="noopener noreferrer">here</a>.</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    <source media="(max-width: 480px)" srcset="/assets/img/blog/bio2_Figure2-480.webp"></source>
+    <source media="(max-width: 800px)" srcset="/assets/img/blog/bio2_Figure2-800.webp"></source>
+    <source media="(max-width: 1400px)" srcset="/assets/img/blog/bio2_Figure2-1400.webp"></source>
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/bio2_Figure2.png">
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+    Figure 2: A biologically-plausible NN for whitening inputs, derived from a constrained similarity-alignment cost function.
+</div>
+
+<h2 id="nonnegative-similarity-matching-objective-and-a-nonlinear-network">Nonnegative similarity-matching objective and a nonlinear network</h2>
+
+<p>So far, we considered similarity-based NNs with linear neurons. However, biological neurons are not linear and many interesting computations require nonlinearity. A resolution to this discrepancy was suggested by the observation that the output of biological neurons is nonnegative (firing rate cannot be below zero). Hence, we modified the optimization problem by requiring that the output of the similarity-matching cost function (2.1) is nonnegative:</p>
+
+\[\min_{ {\bf y}_1,\ldots,{\bf y}_T \geq 0}  \frac{1}{T^2}  \sum_{t=1}^T  \sum_{t'=1}^T \left({\bf x}_t^\top {\bf x}_{t'} - {\bf y}_t^\top {\bf y}_{t'} \right)^2. \qquad\qquad (2.10)\]
+
+<p>Solutions of the optimization problem (2.10) are very different from PCA: They can cluster well-segregated data and extract sparse features from data. Understanding the nature of these solutions will be the topic of the next. post. For now, we note that (2.10) can be solved by the same online algorithm as (2.1) except that the output variables are projected onto the nonnegative domain. Such algorithm maps onto the same network as Figure 1 but with rectifying neurons (ReLUs), Figure 3A.</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    <source media="(max-width: 480px)" srcset="/assets/img/blog/bio2_Figure3-480.webp"></source>
+    <source media="(max-width: 800px)" srcset="/assets/img/blog/bio2_Figure3-800.webp"></source>
+    <source media="(max-width: 1400px)" srcset="/assets/img/blog/bio2_Figure3-1400.webp"></source>
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/bio2_Figure3.png">
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+    Figure 3: A) A nonlinear Hebbian/Anti-Hebbian network derived from nonnegative similarity matching. B) Stacked network for NICA. NSM - nonnegative similarity-matching.
+</div>
+
+<p>Another problem solved by similarity-based networks is the nonnegative independent component analysis (NICA) which can be used for blind source separation. The problem is to recover independent and nonnegative sources from observing only their linear mixture. <a href="https://www.researchgate.net/publication/3342750_Conditions_for_nonnegative_independent_component_analysis" target="_blank" rel="noopener noreferrer">Plumbley</a> showed that NICA can be solved in two steps, Figure 4. First, whiten the data to obtain an orthogonal rotation of the sources. Second, find an orthogonal rotation of the whitened sources that yields a nonnegative output, Figure 4. The first step can be implemented by the whitening network in Figure 2. The second step can be implemented by the nonnegative similarity-matching network, Figure 3A, because an orthogonal rotation does not affect dot-product similarities. Therefore, NICA is solved by stacking the whitening and the nonnegative similarity-matching networks, Figure 3B.</p>
+
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <figure>
+
+  <picture>
+    <source media="(max-width: 480px)" srcset="/assets/img/blog/bio2_Figure4-480.webp"></source>
+    <source media="(max-width: 800px)" srcset="/assets/img/blog/bio2_Figure4-800.webp"></source>
+    <source media="(max-width: 1400px)" srcset="/assets/img/blog/bio2_Figure4-1400.webp"></source>
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/blog/bio2_Figure4.png">
+  </picture>
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+    Figure 4: Illustration of the nonnegative independent component analysis algorithm. Two source channels (left) are linearly transformed to a two-dimensional mixture, which are the inputs to the algorithm (middle). Whitening (right) yields an orthogonal rotation of the sources. Sources are then recovered by solving the nonnegative similarity-matching problem. Green and red plus signs track two source vectors across mixing and whitening stag
+</div>
+
+<h2 id="similarity-based-algorithms-as-general-purpose-tools">Similarity-based algorithms as general-purpose tools</h2>
+
+<p>While the derivation of the similarity-matching algorithm was motivated by constraints imposed by biology, the resulting algorithm performs well on large-scale data. A recent paper introduced an efficient modification of the similarity-matching algorithm and demonstrated its competitiveness with the state-of-the-art principal subspace projection algorithms in both processing speed and convergence rate. A package with implementations of these algorithms is <a href="https://github.com/flatironinstitute/online_psp" target="_blank" rel="noopener noreferrer">here</a> and <a href="https://github.com/flatironinstitute/online_psp_matlab" target="_blank" rel="noopener noreferrer">here</a>.</p>
+
+<p>In this blog post, we introduced linear and non-linear similarity-matching NNs that can serve as models of biological NNs and as general-purpose machine-learning tools. In the ne${\bf x_t}$ post, we will discuss the nature of the solutions to nonnegative similarity-based networks.</p>
+
+      </d-article>
+
+      <d-appendix>
+        <d-footnote-list></d-footnote-list>
+        <d-citation-list></d-citation-list>
+      </d-appendix>
+
+    </div>
+
+    <!-- Footer -->    <!-- 
+    <footer class="fixed-bottom">
+      <div class="container mt-0">
+        &copy; Copyright 2025   . 
+      </div>
+    </footer> -->
+
+  </body>
+
+  <d-bibliography src="/assets/bibliography/">
+  </d-bibliography>
+
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+  <script src="/assets/js/distillpub/overrides.js"></script>
+
+</html>

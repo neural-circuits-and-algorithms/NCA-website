@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<!-- _layouts/distill.html -->
+<html>
+  <head>        
+    <!-- Metadata, OpenGraph and Schema.org -->
+    
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Neural Circuits and Algorithms | The Search for Biologically Plausible Neural Computation — Part 1</title>
+    <meta name="author" content="  " />
+    <meta name="description" content="the conventional approach" />
+    <meta name="keywords" content="dmitri chklovskii, mitya chklovskii, connectomics, neural circuits, neural algorithms, computational neuroscience, flatiron institute" />
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" integrity="sha512-RO38pBRxYH3SoOprtPTD86JFOclM51/XTIdEPh5j8sj4tp8jmQIx26twG52UaLi//hQldfrh7e51WzP9wuP32Q==" crossorigin="anonymous" />
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"  integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://gitcdn.link/repo/jwarby/jekyll-pygments-themes/master/github.css" />
+
+    <!-- Styles -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="https://neural-circuits-and-algorithms.github.io/blog/2016/bio-conventional/">
+
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams'
+      }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    <!-- Distill js -->
+    <script src="/assets/js/distillpub/template.v2.js"></script>
+    <script src="/assets/js/distillpub/transforms.v2.js"></script>
+    
+  </head>
+
+  <d-front-matter>
+    <script async type="text/json">{
+      "title": "The Search for Biologically Plausible Neural Computation — Part 1",
+      "description": "the conventional approach",
+      "published": "November 3, 2016",
+      "authors": [
+        {
+          "author": "Dmitri 'Mitya' Chklovskii",
+          "authorURL": "https://scholar.google.com/citations?user=7Bgb5TUAAAAJ&hl=en",
+          "affiliations": [
+            {
+              "name": "Flatiron Institue",
+              "url": ""
+            }
+          ]
+        }
+        
+      ],
+      "katex": {
+        "delimiters": [
+          {
+            "left": "$",
+            "right": "$",
+            "display": false
+          },
+          {
+            "left": "$$",
+            "right": "$$",
+            "display": true
+          }
+        ]
+      }
+    }</script>
+  </d-front-matter>
+
+  <body class="fixed-top-nav">
+
+    <!-- Header -->
+    <header>
+
+      <!-- Nav Bar -->
+      <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+        <div class="container">
+        <!-- <a class="navbar-link" href="https://www.simonsfoundation.org/flatiron/">
+          <img class="navbar-logo" src="/assets/img/fi-logo.png"/>
+        </a>
+        <a class="navbar-link" href="https://www.simonsfoundation.org/flatiron/center-for-computational-neuroscience/">
+          <img class="navbar-logo" src="/assets/img/brain-logo.png"/>
+        </a> -->
+        <a class="navbar-brand title font-weight-lighter" href="https://neural-circuits-and-algorithms.github.io/">
+            CHKLOVSKII LAB
+        </a>
+
+
+          <!-- Navbar Toggle -->
+          <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar top-bar"></span>
+            <span class="icon-bar middle-bar"></span>
+            <span class="icon-bar bottom-bar"></span>
+          </button>
+
+          <div class="collapse navbar-collapse text-right" id="navbarNav">
+            <ul class="navbar-nav ml-auto flex-nowrap">
+
+              <!-- About
+              <li class="nav-item ">
+                <a class="nav-link" href="/">About</a>
+              </li> -->
+              
+              <!-- Blog -->
+              <li class="nav-item active">
+                <a class="nav-link" href="/blog/">Blog</a>
+              </li>
+
+              <!-- Other pages -->
+              <li class="nav-item ">
+                <a class="nav-link" href="/careers/" target="_blank">Careers</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="/people/">People</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href="/publications/">Publications</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Content -->
+    <div class="post distill">
+
+      <d-title>
+        <h1>The Search for Biologically Plausible Neural Computation — Part 1</h1>
+        <p>the conventional approach</p>
+      </d-title>
+
+      <d-byline></d-byline>
+
+      <d-article>
+        <d-contents>
+          <nav class="l-text figcaption">
+          <h3>Contents</h3>
+            <div><a href="#a-sketch-of-a-biological-neuron">A Sketch of a Biological Neuron</a></div>
+            <div><a href="#primary-biological-constraints">Primary Biological Constraints</a></div>
+            <div><a href="#single-neuron-online-principal-component-analysis-pca">Single-neuron Online Principal Component Analysis (PCA)</a></div>
+            <div><a href="#a-normative-theory">A Normative Theory</a></div>
+            <div><a href="#deriving-a-single-neuron-online-pca-using-the-reconstruction-approach">Deriving a Single-neuron Online PCA using the Reconstruction Approach</a></div>
+            <div><a href="#the-reconstruction-approach-fails-for-multi-neuron-networks">The Reconstruction Approach Fails for Multi-neuron Networks</a></div>
+            
+          </nav>
+        </d-contents>
+
+        <p>Inventors of the original artificial neural networks (NNs) derived their inspiration from biology. However, as artificial NNs progressed, their design was less guided by neuroscience facts. Meanwhile, progress in neuroscience has altered our conceptual understanding of neurons. Consequently, we believe that many successful artificial NNs resemble natural NNs only superficially violating fundamental constraints imposed by biological hardware.</p>
+
+<p>The wide gap between the artificial and natural NN designs raises intriguing questions: What algorithms underlie natural NNs? Can insights from biology help build better artificial NNs?</p>
+
+<p>This is the first of a series of posts aimed at explaining recent progress made by my collaborators and myself towards biologically plausible NNs. Such networks can serve both as models of natural NNs and as general purpose artificial NNs. We have found that respecting biological constraints actually helps development of artificial NNs by guiding design decisions.</p>
+
+<p>In this post, I cover the background material, going back several decades. I sketch a biological neuron, introduce primary biological constraints, and discuss the conventional approach to deriving artificial NNs. I will show that while the conventional approach generates a reasonable algorithmic model of a single biological neuron, multi-neuron networks violate biological constraints. In future posts we will see how to fix that.</p>
+
+<h2 id="a-sketch-of-a-biological-neuron">A Sketch of a Biological Neuron</h2>
+
+<p>Here is the minimum biological background needed to understand the rest of the post.</p>
+
+<p>A biological neuron receives signals from multiple neurons, computes their weighted sum and generates a signal transmitted to multiple neurons, Figure 1. Each neuron’s signaling activity is quantified by the firing rate, which is a nonnegative real number that varies over time. Each synapse scales the input from the corresponding upstream neuron onto the receiving neuron by its weight. The receiving neuron sums scaled inputs, i.e. computes the inner product of the upstream activity vector and the synaptic weight vector. The inner product passes through a nonlinearity called the activation function and the output is transmitted to downstream neurons.</p>
+
+<p>Synaptic weight changes over time, typically, on a slower time scale than neuronal signals. The weight depends on neuronal signals per so-called learning rules. For example, in commonly used <a href="https://en.wikipedia.org/wiki/Hebbian_theory" target="_blank" rel="noopener noreferrer">Hebbian learning rules</a>, synaptic weight is proportional to the correlation between the activities of the two neurons a synapse connects, i.e. pre- and postsynaptic.</p>
+
+<h2 id="primary-biological-constraints">Primary Biological Constraints</h2>
+
+<p>To determine which algorithmic models in this post are biologically plausible, we can focus on a few key biological constraints.</p>
+
+<p>Biologically plausible algorithms must be formulated in the online (or streaming), rather than offline (or batch), setting. This means that input data are streamed to the algorithm sequentially, one sample at a time, and the corresponding output must be computed before the next input sample arrives. The output communicated to downstream neurons cannot be modified in the future. A neuron cannot store individual past inputs or outputs except in a highly compressed format limited to synaptic weights and a few state variables.</p>
+
+<p>In biologically plausible NNs, learning rules must be local. This means that the synaptic weight update may depend on the activities of only the two neurons a synapse connects, as for example, in Hebbian learning. Activities of other neurons are not physically available to a synapse and therefore including them into learning rules would be biologically implausible. Modern artificial NNs, such as backpropagation-based deep learning networks, rely on nonlocal learning rules.</p>
+
+<p>Our initial focus is on unsupervised learning. This is not a hard constraint, but rather a matter of priority. Whereas humans are clearly capable of supervised learning, most of our learning tasks lack big labeled datasets. On the mechanistic level, most neurons lack a clear supervision signal.</p>
+
+<h2 id="single-neuron-online-principal-component-analysis-pca">Single-neuron Online Principal Component Analysis (PCA)</h2>
+
+<p>In 1982, <a href="https://www.semanticscholar.org/paper/Simplified-neuron-model-as-a-principal-component-Oja/3e00dd12caea7c4dab1633a35d1da3cb2e76b420?p2df" target="_blank" rel="noopener noreferrer">Oja proposed</a> modeling a neuron by an online PCA algorithm. PCA is a workhorse of data analysis used for dimensionality reduction, denoising, and latent factor discovery. Therefore, Oja’s seminal paper established that biological processes in a neuron can be viewed as the steps of an online algorithm solving a useful computational objective.</p>
+
+<p>Oja’s single-neuron online PCA algorithm works as follows. At each time step, \(t\), it receives an input data sample, \({\bf x}_t\), computes and outputs the corresponding top principal component value, \({\bf y}_t\):</p>
+
+\[y_t \leftarrow {\bf w} _{t-1}^\top {\bf x}_t. \qquad \qquad \qquad (1.1)\]
+
+<p>Here and below lowercase boldfaced letters designate vectors. Then the algorithm updates the (normalized) feature vector,</p>
+
+\[{\bf w} _t \leftarrow {\bf w} _{t-1}+ \eta ( {\bf x} _t- {\bf w} _{t-1} y_t  ) y_t. \qquad \qquad (1.2)\]
+
+<p>The feature vector, w, converges to the eigenvector of input covariance if data are drawn i.i.d from a stationary distribution.</p>
+
+<p>The steps of the Oja algorithm (1.1-1.2) correspond to the operations of the biological neuron. If the input vector is represented by the activities of the upstream neurons, (1.1) represents weighted summation of the inputs by the output neuron. If the activation function is linear the output, \({\bf y}_t\), is simply the weighted sum. The update (1.2) is a local Hebbian synaptic learning rule. The first term of the update is proportional to the correlation of the pre- and postsynaptic neurons’ activities and the second term, also local, normalizes the synaptic weight vector.</p>
+
+<h2 id="a-normative-theory">A Normative Theory</h2>
+
+<p>Next, we would like to build on Oja’s insightful identification of biological processes with the steps of the online PCA algorithm by computing multiple principal components using multi-neuron NNs and including the activation nonlinearity.</p>
+
+<p>Instead of trying to extend the Oja model heuristically, we take a more systematic, so-called normative approach. In this approach, a biological model is viewed as the solution of an optimization problem. Specifically, we postulate an objective function motivated by a computational principle, derive an online algorithm optimizing such objective, and map the steps of the algorithm onto biological processes.</p>
+
+<p>Having such normative theory allows us to navigate through the space of possible algorithmic models in a more efficient and systematic way. Mathematical compactness of objective functions facilitates generating new models and weeding out inconsistent ones. This is similar to the Hamiltonian approach in physics which leverages natural symmetries and safeguards against the violation of the first law of thermodynamics (energy conservation).</p>
+
+<h2 id="deriving-a-single-neuron-online-pca-using-the-reconstruction-approach">Deriving a Single-neuron Online PCA using the Reconstruction Approach</h2>
+<p>To build a normative theory, we first need to derive Oja’s single-neuron online algorithm by solving an optimization problem. What objective function should we choose for online PCA? Historically, neural activity has been often viewed as representing each data sample, \({\bf x}_t\), by the feature vector, \(w\), scaled by the output, \({\bf y}_t\), Figure 2. Such reconstruction approach is naturally formalized as the minimization of the reconstruction (or coding) error:</p>
+
+\[\min_{\| {\bf w} \|=1} {\sum \limits_{t=1}^{T} \min_{ y_t} {\| {\bf x}_t-{\bf w} y_t \| ^2_2}}. \qquad \qquad \qquad \quad (1.3)\]
+
+<p>In the offline setting, optimization problem (1.3) is solved by PCA: the optimum w is the eigenvector of input covariance corresponding to the top eigenvalue and the optimum output, y, is the first principal component.</p>
+
+<p>In the online setting, (1.3) can be solved by alternating minimization, which has been a subject of recent analysis. After the arrival of each data point, \({\bf x}_t\) , the algorithm computes optimum output, \({\bf y}_t\), while keeping the feature vector, \(w_{t−1}\), computed at the previous time step, fixed. By using calculus, one finds that the optimum output is given by (1.1). Then, the algorithm minimizes the total reconstruction error with respect to the feature vector while keeping all the outputs fixed. Again, resorting to calculus, one finds (1.2).</p>
+
+<p>Thus, the single-neuron online PCA algorithm may be derived using the reconstruction approach. To compute multiple principal components, we need to extend this success to multi-neuron networks.</p>
+
+<h2 id="the-reconstruction-approach-fails-for-multi-neuron-networks">The Reconstruction Approach Fails for Multi-neuron Networks</h2>
+
+<p>Though the reconstruction approach yields a multi-component online PCA algorithm, the corresponding NNs are not biologically plausible.</p>
+
+<p>Extension of the reconstruction error objective from single to multiple output components is straightforward - each scalar, \({\bf y}_t\), is replaced by a vector, \({\bf y}_t\):</p>
+
+\[\min_{\rm diag({\bf W}^\top {\bf W})={\bf I}} {\sum \limits_{t=1}^{T} \min_{ {\bf y}_t} {\| {\bf x}_t-{\bf W} {\bf y}_t \| ^2_2}}. \qquad \qquad \qquad \quad (1.4)\]
+
+<p>Here matrix W comprises column-vectors corresponding to different features. As in the single- neuron case this objective can be optimized online by alternating minimization. After the arrival of data sample, \({\bf x}_t\), the feature vectors are kept fixed while the objective (1.4) is minimized with respect to the principal components by iterating the following update until convergence:</p>
+
+\[{\bf y}_t \leftarrow {\bf W} _{t-1}^\top {\bf x}_t - {\bf W} _{t-1}^\top {\bf W} _{t-1} {\bf y}_t . \qquad \qquad \qquad (1.5)\]
+
+<p>Minimizing the total objective with respect to the feature vectors for fixed principal components yields the following update:</p>
+
+\[{\bf W} _t \leftarrow {\bf W} _{t-1}+ \eta ( {\bf x} _t- {\bf W} _{t-1} {\bf y}_t ) {\bf y}_t^\top  \cdot \qquad \qquad (1.6)\]
+
+<p>As before, in NN implementations of algorithm (1.5-1.6), feature vectors are represented by synaptic weights and principal components by the activities of output neurons. Then (1.5) can be implemented by a single-layer NN, Figure 3, in which activity dynamics converges faster than the time interval between the arrival of successive data samples.</p>
+
+<p>However, implementing update (1.6) in the single-layer NN architecture, Figure 3, requires nonlocal learning rules making it biologically implausible. Indeed, the last term in (1.6) implies that updating the weight of a synapse requires the knowledge of output activities of all other neurons which are not available to the synapse. Moreover, the matrix of lateral connection weights, \(−{\bf W}^\top_{t−1}W_{t−1}\), in the last term of (1.5) is computed as a Grammian of feedforward weights, clearly a nonlocal operation. This problem is not limited to PCA and arises in networks of nonlinear neurons as well.</p>
+
+<p>Rather than deriving learning rules from a principled objective, many authors constructed biologically plausible single-layer networks using local learning rules, Hebbian for feedforward and anti-Hebbian (meaning there is a minus sign in front of the correlation-based synaptic weight as for the last term in (1.5)). However, in my view, abandoning the normative approach creates more problems than it solves.</p>
+
+<p>I have outlined how the conventional reconstruction approach fails to generate biologically plausible multi-neuron networks for online PCA. In the next post, I will introduce an alternative approach that overcomes this limitation. Moreover, this approach suggests a novel view of neural computation leading to many interesting extensions.</p>
+
+<p><em>Acknowledgement: I am grateful to Sanjeev Arora for his support and encouragement as well as to Cengiz Pehlevan, Leo Shklovskii, Emily Singer, and Thomas Lin for their comments on the earlier versions.</em></p>
+
+      </d-article>
+
+      <d-appendix>
+        <d-footnote-list></d-footnote-list>
+        <d-citation-list></d-citation-list>
+      </d-appendix>
+
+    </div>
+
+    <!-- Footer -->    <!-- 
+    <footer class="fixed-bottom">
+      <div class="container mt-0">
+        &copy; Copyright 2025   . 
+      </div>
+    </footer> -->
+
+  </body>
+
+  <d-bibliography src="/assets/bibliography/">
+  </d-bibliography>
+
+  <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+  <script src="/assets/js/distillpub/overrides.js"></script>
+
+</html>
