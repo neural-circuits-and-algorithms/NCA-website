@@ -1,5 +1,5 @@
 ---
-first_name: Phillip
+first_name: Philip
 last_name: Greengard
 position: Research Scientist
 degree: Ph.D.
